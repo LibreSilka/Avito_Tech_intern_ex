@@ -1,6 +1,7 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+
 class BasePage:
     """Базовый класс для всех страниц"""
     TIMEOUT = 10
@@ -28,3 +29,13 @@ class BasePage:
         element = self.wait_for_element(locator)
         element.clear()
         element.send_keys(text)
+
+    def find_element(self, type, locator):
+        """Поиск элемента"""
+        return self.driver.find_elements(type, locator)
+
+    def get_attr(self, type, locator):
+        """Получение аттрибута класса"""
+        element = self.driver.find_element(type, locator)
+        class_attr = element.get_attribute("class")
+        return class_attr
