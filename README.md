@@ -65,5 +65,5 @@
 
 5. Запустите тесты, выполнив команду  
    ```
-   pytest test_advertisements.py
+   pytest test_games.py
    ```
